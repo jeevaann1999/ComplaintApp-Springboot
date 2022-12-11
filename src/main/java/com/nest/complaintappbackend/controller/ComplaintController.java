@@ -52,4 +52,11 @@ public class ComplaintController {
         }
         return hm;
     }
+
+    @CrossOrigin(origins = "*")
+    @PostMapping(path = "/getUserById",consumes = "application/json",produces = "application/json")
+    public List<UserModel> GetUserById(@RequestBody UserModel u)
+    {
+        return (List<UserModel>) udao.FindUserById(u.getId());
+    }
 }
