@@ -10,6 +10,6 @@ import java.util.List;
 public interface UserDao extends CrudRepository<UserModel,Integer> {
 
     @Query(value = "SELECT `id`, `address`, `email`, `name`, `password`, `phone`, `username` FROM `user` WHERE `username`= :username AND `password`= :password",nativeQuery = true)
-    List<UserModel> FindUser(@Param("username") String username, @Param("password") String password);
+    List<UserModel> UserLogin(@Param("username") String username, @Param("password") String password);
 
 }
